@@ -1,0 +1,81 @@
+#api call for register
+###
+POST   http://127.0.0.1:8000/accounts/register/
+Content-Type: application/json
+
+{
+    "username":"react",
+    "email":"react@gmail.com",
+    "password":"password@123",
+    "phone":"92765456",
+    "dob":"1996-05-15",
+    "height":175.5,
+    "weight":67.5
+}
+
+#token
+###
+post  http://127.0.0.1:8000/token/
+Content-Type: application/json
+
+{
+    "username":"django",
+    "password":"password@123"
+
+
+}
+#=================calorie=====
+
+#api call for listing calorie
+###
+GET http://127.0.0.1:8000/calorie/
+Accept: application/json
+Authorization: Token 2965fdae880c53ab38673c96f85fd8c21684cb9f
+
+
+#api call for adding calorie
+###
+POST   http://127.0.0.1:8000/calorie/
+Content-Type: application/json
+Authorization: Basic django:password@123
+
+{
+    "title":"snacks",
+    "serving_size":"4",
+    "calories":"20"
+}
+
+#api call for retrieve calorie
+###
+get http://127.0.0.1:8000/calorie/1/
+Accept: application/json
+Authorization:Token 2965fdae880c53ab38673c96f85fd8c21684cb9f
+
+
+#api call for updating calorie
+###
+PUT    http://127.0.0.1:8000/calorie/1/
+Content-Type: application/json
+Authorization: Token 2965fdae880c53ab38673c96f85fd8c21684cb9f
+
+{
+  "id": 1,
+  "title": "dinner",
+  "serving_size": 4,
+  "calorie": 25,
+  "meal_type": "dinner",
+  "created_at": "2026-11-13",
+  "owner": 1
+}
+
+#api call for delete calorie
+###
+delete http://127.0.0.1:8000/calorie/8/
+Accept: application/json
+Authorization:Token 2965fdae880c53ab38673c96f85fd8c21684cb9f
+
+#calorie summary
+###
+GET http://127.0.0.1:8000/calorie/summary/
+Accept: application/json
+Authorization: Token 2965fdae880c53ab38673c96f85fd8c21684cb9f
